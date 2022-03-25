@@ -43,3 +43,60 @@ nomeCompleto.forEach( (String values){
   
 });
 }
+operaçoes aritimeticas e lógicas
+void main() {
+  String resposta;
+  resposta = 'O resultado da operação é:';
+  
+  int valor1 = 5;
+  int valor2= 7;
+  
+  int resultado = valor1 + valor2;
+  print ('$resposta $resultado');
+  
+  int n1 = 75;
+  int n2 = 3;
+  
+  int result = n1-n2;
+  
+  print ('$resposta $result');
+  
+  //
+  
+  String valor;
+  valor = 'O total da compra é:';
+  
+  //números não inteiros devem ser usados com . e não ,   
+  double preco = 5.99;
+  int quantidade = 17;
+  
+  double pagar = preco*quantidade;
+  print ('$valor $pagar');
+  
+  
+  //treinando lógica e condicionais 
+  double money = 98.50;
+  /*if (money >= pagar == true ) {
+    print ('A compra foi aprovada');
+  }
+  else {
+    print ('A compra foi recusada');
+  }*/
+  
+  int senha; 
+    senha = 1234;
+  
+  int password;
+    password = 12345;
+  
+  if (senha == password || money >= pagar) {
+    print ('Senha incorreta, saldo suficiente ');
+  }
+  else {
+    print ('Senha correta! compra aprovada.');
+  }
+  
+  if(preco is double) {
+    print ('Você está comprando uma touca de cetim!');
+  };
+}

@@ -100,3 +100,25 @@ void main() {
     print ('Você está comprando uma touca de cetim!');
   };
 }
+
+//lista para objetos
+  //util para grandes listas, com muitas categorias, possive para o game 
+  List <Cadastro> cadastro = [Cadastro('Yasmin',48913265818,06365653,11994742491), 
+                              Cadastro('Eliana' ,28894045870, 06325984,11993519300),
+                             Cadastro('Anderson', 26177073859, 06852395, 11998563200)];
+  cadastro.forEach((Cadastro cadastro){
+    print(cadastro.nome);
+     print(cadastro.cpf);
+     print(cadastro.cep);
+     print(cadastro.telefone);
+  });
+  
+}
+
+class Cadastro {
+  String nome = '';
+  int cpf;
+  int cep;
+  int telefone;
+  
+  Cadastro(this.nome, this.cpf, this.cep, this.telefone);

@@ -1,0 +1,45 @@
+  //criando lista a ser alterada
+  List <String> nomeCompleto = ['Yasmin'];
+  print (nomeCompleto);
+  
+  //adicionando o último sobrenome 
+  nomeCompleto.add('Silva');
+  print(nomeCompleto);
+  
+  //adicionando o sobrenome numa posição especifica
+  nomeCompleto.insert(1, 'Guedes');
+  print(nomeCompleto);
+  
+  //adicionando um nome pra remover
+  nomeCompleto.add('Oliveira');
+  print(nomeCompleto);
+  
+  //removendo nome errado
+  nomeCompleto.removeAt(3);
+  print(nomeCompleto);
+  
+  //verificando se oliveira ainda está na lista (false)
+  nomeCompleto.contains('Oliveira');
+  print(nomeCompleto.contains('Oliveira'));
+  
+  //verificando quantos elementos temos na lista
+  print(nomeCompleto.length);
+  
+  //verificando qual o último elemento 
+  print(nomeCompleto[nomeCompleto.length-1]);
+  
+  //verificando qual o 1° elemento 
+  print(nomeCompleto[0]);
+  
+  //criando lista de key e values da lista (key se trata do n° do elemento, e value o elemento em sí)
+int keys =0;
+//var para add os valores da key
+
+  //forEach conta os elementos da lista começando por 0, os atribui a string values e as apresenta na tela contando +1 cada vez que o forEach conta um elemento
+nomeCompleto.forEach( (String values){
+  
+  print( '$keys $values');
+  keys++;
+  
+});
+}

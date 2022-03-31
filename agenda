@@ -1,0 +1,91 @@
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class Agenda {
+  String nome = '';
+  int telefone;
+  String email = '';
+
+  Agenda(this.nome, this.telefone, this.email);
+}
+
+class MyWidget extends StatelessWidget {
+  
+  final addNome = TextEditingController();
+  final addTel = TextEditingController();
+  final addEmail = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+
+      
+      Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: TextField(
+          controller: addNome, 
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'Nome',
+          ),
+        ),
+      ),
+       Padding(
+        padding:const EdgeInsets.all(16.0),
+        child: TextField(
+          controller: addTel,
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'Telefone',
+          ),
+        ),
+      ),
+      Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: TextField(
+            controller: addEmail,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'E-mail ',
+            ),
+          )),
+      ElevatedButton(
+          //cria o botão-
+          child: const Text('Adicionar'),
+          onPressed: () {
+            
+            //print(addTel.text);
+          }),
+      
+      SizedBox(height: 15),
+      
+      ElevatedButton(
+          //cria o botão-
+          child: const Text('Mostrar'),
+          onPressed: () {
+           
+          }),
+    ]);
+  }
+}

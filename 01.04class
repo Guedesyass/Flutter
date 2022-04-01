@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 180,
+      width: 180,
+      color: Colors.purple,
+      child: Column(children: [
+        const Text ('Yas'),
+        Row(children: const [
+        SizedBox(width: 23),
+        Text ('Guedes'), 
+        SizedBox(width: 30),
+        Text ('LEO bitch')]),
+        Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRReIQ_1vUlCwf9sYwcTTbVDDNN0Nhq6_TWJg&usqp=CAU')
+      ]) 
+    );
+  }
+}

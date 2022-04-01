@@ -42,3 +42,61 @@ class MyWidget extends StatelessWidget {
     );
   }
 }
+
+
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+        color: Colors.white,
+        elevation: 5,
+        child: Container(
+            width: 200,
+            height: 350,
+            child: Column(children: [
+              Image.network(
+                  'https://upload.wikimedia.org/wikipedia/pt/7/71/Sour_-_Olivia_Rodrigo.png'),
+              const Divider(color: Colors.grey),
+              Column(children: [
+                const Text('Olivia',
+                    style: TextStyle(
+                      color: Colors.purple,
+                    )),
+                const Text('Rodrigo',
+                    style: TextStyle(
+                      color: Colors.purple,
+                    )),
+                const Icon(
+                Icons.lock_open,
+                color: Colors.purple,
+                size:30.0,
+                )
+              ]),
+            ])));
+  }
+}

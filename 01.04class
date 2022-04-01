@@ -100,3 +100,60 @@ class MyWidget extends StatelessWidget {
             ])));
   }
 }
+
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+        color: Colors.white,
+        elevation: 5,
+        child: Container(
+            width: 200,
+            height: 350,
+            child: Column(children: [
+              Image.network(
+                  'https://m.media-amazon.com/images/I/81QYCfKUAML._AC_SX522_.jpg'),
+              const Divider(color: Colors.green),
+              Column(children: [
+                const Text('Beyoncé',
+                    style: TextStyle(
+                      color: Colors.green,
+                    )),
+                const Text('Lemonade',
+                    style: TextStyle(
+                      color: Colors.green,
+                    )),
+                const Icon(
+                Icons.lock_open,
+                color: Colors.green,
+                size:30.0,
+                )
+              ]),
+            ])));
+  }
+}

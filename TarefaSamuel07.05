@@ -66,6 +66,14 @@ container() {
             Text('USA', style:TextStyle(fontWeight: FontWeight.bold)),
             Text('TODAY', style:TextStyle(fontWeight: FontWeight.bold)),
           ]),
+          
+          
+          Text ('4h ago', style:TextStyle (color: Colors.white, ))
+        ]),
+        
+        SizedBox(height: 20),
+        Row (children: [
+          Text ('Mary Wilton'),
         ])
       ]));
 }

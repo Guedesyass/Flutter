@@ -43,7 +43,7 @@ container() {
       height: 500,
       padding: const EdgeInsets.all(10.0),
       margin: const EdgeInsets.all(10.0),
-      child: Column(children: [
+      child: Column( children: [
         Row(mainAxisAlignment: MainAxisAlignment.end, children: [
           Container(
             width: 40,
@@ -61,12 +61,12 @@ container() {
         ]),
         const SizedBox(height: 105), 
           const Text(
-            'Social Security Is Rethinking How It Runs Customer Service After Covid',
+            ' Social Security Is  \n Rethinking How It Runs  \n Customer Service After   \n Covid',
             style: TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.bold,
             )),
-        const SizedBox(height: 40),
+        const SizedBox(height: 40,),
         Row(children: [
           const SizedBox(width:20),
           const Icon(

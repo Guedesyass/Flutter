@@ -35,7 +35,7 @@ class MyWidget extends StatelessWidget {
 container() {
   return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(
+          image: const DecorationImage(
               image: NetworkImage(
                   'https://yt3.ggpht.com/ytc/AKedOLTcCm5_qxNWV_hzrQC9MNDqb6QzXRIyl09P9vK7=s900-c-k-c0x00ffffff-no-rj')),
           borderRadius: BorderRadius.circular(40)),
@@ -45,39 +45,48 @@ container() {
       margin: const EdgeInsets.all(10.0),
       child: Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-         Container (
-           color: Colors.,
-           //elevation: 5,
-           child:  Icon(
-            Icons.bookmark_border,
-            color: Colors.white,
-            size: 30.0,
-            //alignment: Alignment.topRight,
-          ),)
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Colors.purple[900],
+              borderRadius: BorderRadius.circular(40),
+            ),
+            child: const Icon(
+              Icons.bookmark_border,
+              color: Colors.white,
+              size: 25.0,
+            ),
+          )
         ]),
-        SizedBox(height: 120),
-        Text(
+        const SizedBox(height: 105), 
+          const Text(
             'Social Security Is Rethinking How It Runs Customer Service After Covid',
-            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
-        SizedBox(height: 40),
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+            )),
+        const SizedBox(height: 40),
         Row(children: [
-          Icon(
+          const SizedBox(width:20),
+          const Icon(
             Icons.circle,
             color: Colors.lightBlue,
             size: 30.0,
           ),
-          Column( children: [
+          Column(children: const [
             Text('USA', style: TextStyle(fontWeight: FontWeight.bold)),
             Text('TODAY', style: TextStyle(fontWeight: FontWeight.bold)),
           ]),
-          Text('4h ago',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-              ))
+          const SizedBox(width:310),
+            const Text('4h ago',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                )),
         ]),
-        SizedBox(height: 20),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+        const SizedBox(height: 20),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children : const [
           Text('Mary Wilton',
               style: TextStyle(
                 fontSize: 15,

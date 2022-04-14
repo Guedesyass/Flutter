@@ -44,36 +44,63 @@ container() {
       padding: const EdgeInsets.all(10.0),
       margin: const EdgeInsets.all(10.0),
       child: Column(children: [
-        Icon(
-          Icons.bookmark_border,
-          color: Colors.white,
-          size: 30.0,
-          //alignment: Alignment.topRight,
-        ),
-        SizedBox(height: 150),
+        Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+         Container (
+           color: Colors.,
+           //elevation: 5,
+           child:  Icon(
+            Icons.bookmark_border,
+            color: Colors.white,
+            size: 30.0,
+            //alignment: Alignment.topRight,
+          ),)
+        ]),
+        SizedBox(height: 120),
         Text(
             'Social Security Is Rethinking How It Runs Customer Service After Covid',
             style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
-        
         SizedBox(height: 40),
         Row(children: [
-          Image.network(
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Circulo_azul.png/480px-Circulo_azul.png',
-            width: 30,
-            height: 30,
+          Icon(
+            Icons.circle,
+            color: Colors.lightBlue,
+            size: 30.0,
           ),
-          Column(children: [
-            Text('USA', style:TextStyle(fontWeight: FontWeight.bold)),
-            Text('TODAY', style:TextStyle(fontWeight: FontWeight.bold)),
+          Column( children: [
+            Text('USA', style: TextStyle(fontWeight: FontWeight.bold)),
+            Text('TODAY', style: TextStyle(fontWeight: FontWeight.bold)),
           ]),
-          
-          
-          Text ('4h ago', style:TextStyle (color: Colors.white, ))
+          Text('4h ago',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15,
+              ))
         ]),
-        
         SizedBox(height: 20),
-        Row (children: [
-          Text ('Mary Wilton'),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          Text('Mary Wilton',
+              style: TextStyle(
+                fontSize: 15,
+              )),
+          Icon(
+            Icons.circle,
+            color: Colors.white,
+            size: 3.0,
+          ),
+          Text('5 min Reads',
+              style: TextStyle(
+                fontSize: 15,
+              )),
+          Icon(
+            Icons.circle,
+            color: Colors.white,
+            size: 3.0,
+          ),
+          Text('54 Upvote',
+              style: TextStyle(
+                fontSize: 15,
+              ))
         ])
       ]));
 }
+

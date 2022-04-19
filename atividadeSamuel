@@ -36,21 +36,25 @@ class MyWidget extends StatelessWidget {
 container() {
   return Container(
       decoration: BoxDecoration(
-          image: const DecorationImage(
+          image: DecorationImage(
               image: NetworkImage(
-                  'https://yt3.ggpht.com/ytc/AKedOLTcCm5_qxNWV_hzrQC9MNDqb6QzXRIyl09P9vK7=s900-c-k-c0x00ffffff-no-rj')),
+                  'https://yt3.ggpht.com/ytc/AKedOLTcCm5_qxNWV_hzrQC9MNDqb6QzXRIyl09P9vK7=s900-c-k-c0x00ffffff-no-rj'),
+              colorFilter: ColorFilter.mode(
+                Colors.white.withOpacity(0.8),
+                BlendMode.modulate,
+              )),
           borderRadius: BorderRadius.circular(40)),
       width: 500,
       height: 500,
       padding: const EdgeInsets.all(10.0),
       margin: const EdgeInsets.all(10.0),
-      child: Column( children: [
+      child: Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.end, children: [
           Container(
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: Colors.purple[900],
+              color: Colors.purple,
               borderRadius: BorderRadius.circular(40),
             ),
             child: const Icon(
@@ -60,38 +64,39 @@ container() {
             ),
           )
         ]),
-        const SizedBox(height: 105), 
-        Row ( children: [
-          const SizedBox (width:20),
-          const Text(
-            'Social Security Is \nRethinking How It Runs \nCustomer Service \nAfter Covid',
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-            )),
-        ]),
-     
-        const SizedBox(height: 40,),
+        const SizedBox(height: 105),
         Row(children: [
-          const SizedBox(width:20),
+          const SizedBox(width: 20),
+          const Text(
+              'Social Security Is \nRethinking How It Runs \nCustomer Service \nAfter Covid',
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              )),
+        ]),
+        const SizedBox(
+          height: 40,
+        ),
+        Row(children: [
+          const SizedBox(width: 20),
           const Icon(
             Icons.circle,
-            color: Colors.lightBlue,
+            color: Colors.purple,
             size: 30.0,
           ),
           Column(children: const [
             Text('USA', style: TextStyle(fontWeight: FontWeight.bold)),
             Text('TODAY', style: TextStyle(fontWeight: FontWeight.bold)),
           ]),
-          const SizedBox(width:310),
-            const Text('4h ago',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                )),
+          const SizedBox(width: 310),
+          const Text('4h ago',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15,
+              )),
         ]),
         const SizedBox(height: 20),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children : const [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: const [
           Text('Mary Wilton',
               style: TextStyle(
                 fontSize: 15,
@@ -117,4 +122,3 @@ container() {
         ])
       ]));
 }
-

@@ -1,0 +1,73 @@
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return card();
+  }
+}
+
+card() {
+  return Container(
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+      padding: const EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(10.0),
+      width: 300,
+      height: 150,
+      child: Column(children: [
+        Row(children: [
+          Container (
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+            width:75, height:75,
+            child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbiQEjYXcnkCVU1UywJyOZ65_WzSubzjsKmw&usqp=CAU', width:75, height:75)),
+          Column(children: [
+            const Text('Nome:',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueGrey,
+                )),
+            const Text('Telefone:', style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueGrey,
+                )),
+            const Text('Email:', style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueGrey,
+                )),
+          ])
+        ]),
+        SizedBox (height: 25) ,
+        Row(children: [
+          ElevatedButton(child: const Text('Amigos'), onPressed: () {}),
+          ElevatedButton(child: const Text('Favoritos'), onPressed: () {}),
+          ElevatedButton(child: const Text('Bloqueados'), onPressed: () {}),
+        ])
+      ]));
+}

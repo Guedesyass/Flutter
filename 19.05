@@ -77,3 +77,49 @@ card() {
         ])
       ]));
 }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import 'package:flutter/material.dart';
+import 'package:meuprimeiroapp/mycard.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return card();
+  }
+}
+
+card() {
+  return ListView(
+    children: [
+      MyCard(
+        name: "Yasmin",
+        telefone: "1232131241234",
+        email: "2310-39011283@ERJAOSDAKJSNDKAS@",
+      ),
+    ],
+  );
+}

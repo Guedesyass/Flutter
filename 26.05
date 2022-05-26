@@ -1,3 +1,4 @@
+//main.dart
 import 'package:flutter/material.dart';
 import 'package:meuapp/mycard.dart';
 
@@ -38,6 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  final TextEditingController addnome = TextEditingController();
+  final TextEditingController addemail = TextEditingController();
+  final TextEditingController addtel = TextEditingController();
+
+  List<Mycard> meuscontatos = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,28 +55,67 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            //Text('Novo Contato'),
-            Container(
-              height: 180,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: (TextField(
+                controller: addnome,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Nome:',
+                ),
+              )),
             ),
-            Mycard(
-              nome: "",
-              email: "",
-              telefone: _counter.toString(),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: (TextField(
+                controller: addemail,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email:',
+                ),
+              )),
             ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: (TextField(
+                controller: addtel,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Telefone:',
+                ),
+              )),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: (ElevatedButton(
+                  //cria o botão-
+                  child: const Text('Adicionar'),
+                  onPressed: () {
+                    setState(() {
+                      meuscontatos.add(Mycard(
+                        nome: addnome.text,
+                        email: addemail.text,
+                        telefone: addtel.text,
+                      ));
+                    });
+                  })),
+            ),
+            Expanded(
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: meuscontatos.length,
+                    itemBuilder: ((context, index) {
+                      return meuscontatos[index];
+                    })))
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//mycard.dart
 import 'package:flutter/material.dart';
 
 /*
@@ -161,3 +207,4 @@ class Mycard extends StatelessWidget {
         ]));
   }
 }
+
